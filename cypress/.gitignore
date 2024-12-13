@@ -1,0 +1,21 @@
+
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+
+cypress/videos/
+cypress/screenshots/
+cypress/reports/
+
+
+.vscode/
+.idea/
+
+
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+
+*.log
