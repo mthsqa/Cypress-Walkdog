@@ -65,3 +65,9 @@ Para executar todos os testes, utilize o seguinte comando:
 npm install
 npx cypress open
 npx cypress run
+```
+
+Contribua com o Projeto 🙌
+Se você quiser apoiar o projeto, deixe uma ⭐.
+
+Desenvolvido por Matheus Silva.
