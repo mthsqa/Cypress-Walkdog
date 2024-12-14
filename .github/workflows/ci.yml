@@ -6,8 +6,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      
+      # Instalar dependências do NPM e cache de dependências
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # ou a versão do Node.js que você está usando
+      
+      - name: Install NPM dependencies
+        run: npm install
+
+      # Rodar os testes do Cypress
       - name: Cypress run
         uses: cypress-io/github-action@v3
+        with:
+          start: npm run start  # Inicie o servidor se necessário
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}  # Use uma chave secreta do Cypress se necessário
 
+      # Exemplo de como configurar variáveis de ambiente
+      - name: Set environment variable
+        run: echo "MY_ENV_VAR=some_value" >> $GITHUB_ENV
+
+      - name: Display environment variable
+        run: echo "The environment variable MY_ENV_VAR is $MY_ENV_VAR"
